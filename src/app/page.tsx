@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -8,10 +9,17 @@ export default function Home() {
 
       {/* Nav */}
       <nav className="flex justify-between items-center px-8 py-6 border-b border-white/10">
-        <span className="text-sm tracking-widest uppercase text-white/60">Timewalker Inc.</span>
-        <a href="mailto:info@timewalker.studio" className="text-sm text-white/60 hover:text-white transition">
-          Contact
-        </a>
+        <Link href="/" className="text-sm tracking-widest uppercase text-white/60 hover:text-white transition">
+          Timewalker Inc.
+        </Link>
+        <div className="flex gap-6">
+          <Link href="/about" className="text-sm text-white/60 hover:text-white transition">
+            About
+          </Link>
+          <a href="mailto:info@timewalker.studio" className="text-sm text-white/60 hover:text-white transition">
+            Contact
+          </a>
+        </div>
       </nav>
 
       {/* Hero */}
