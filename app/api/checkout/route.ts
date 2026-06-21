@@ -1,8 +1,9 @@
-import { NextResponse } from 'next/server';
-import { stripe } from '@/lib/stripe';
+﻿import { NextResponse } from 'next/server';
+import { getStripe } from '@/lib/stripe';
 
 export async function POST(req: Request) {
   try {
+    const stripe = getStripe();
     const { service, amount, clientEmail } = await req.json();
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
@@ -15,7 +16,7 @@ export async function POST(req: Request) {
             unit_amount: amount * 100,
             product_data: {
               name: service,
-              description: 'Timewalker Inc. — BC Studio',
+              description: 'Timewalker Inc. - BC Studio',
             },
           },
           quantity: 1,
