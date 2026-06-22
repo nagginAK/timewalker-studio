@@ -1,4 +1,4 @@
-'use client';
+﻿'use client';
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
@@ -17,8 +17,11 @@ export default function Home() {
             About
           </Link>
           <Link href="/contact" className="text-sm text-white/60 hover:text-white transition">
-            Contact
-          </Link>
+              Contact
+            </Link>
+            <Link href="/deposit" className="text-sm text-white/60 hover:text-white transition">
+              Payment
+            </Link>
         </div>
       </nav>
 
@@ -38,7 +41,7 @@ export default function Home() {
           transition={{ duration: 0.6 }}
           className="text-xs tracking-widest uppercase text-white/30 mb-8"
         >
-          Florida · Architecture · Print · Media
+          Florida Â· Architecture Â· Print Â· Media
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
@@ -59,10 +62,10 @@ export default function Home() {
             href="/contact"
             className="text-sm px-6 py-3 border border-white/40 hover:bg-white hover:text-black transition-all duration-200"
           >
-            Get in touch →
+            Get in touch â†’
           </Link>
           <Link href="/about" className="text-sm text-white/60 hover:text-white transition border-b border-white/20 pb-1">
-            About the firm →
+            About the firm â†’
           </Link>
         </motion.div>
       </section>
@@ -89,7 +92,7 @@ export default function Home() {
             <p className="text-xs tracking-widest uppercase text-white/30 mb-6">01</p>
             <h2 className="text-2xl font-semibold mb-4">Architecture & CM</h2>
             <p className="text-sm text-white/50 leading-relaxed mb-8">Residential and commercial design-build services. Florida CGC licensure in progress. First paid client target: early 2027.</p>
-            <p className="text-xs text-white/30 tracking-widest uppercase group-hover:text-white/50 transition-colors">In progress →</p>
+            <p className="text-xs text-white/30 tracking-widest uppercase group-hover:text-white/50 transition-colors">In progress â†’</p>
           </motion.div>
 
           <motion.div
@@ -102,7 +105,7 @@ export default function Home() {
             <p className="text-xs tracking-widest uppercase text-white/30 mb-6">02</p>
             <h2 className="text-2xl font-semibold mb-4">Sherel & Shawnel</h2>
             <p className="text-sm text-white/50 leading-relaxed mb-8">Custom apparel and merchandise. South Florida print studio. Manual press, fusion dryer, full production setup.</p>
-            <p className="text-xs text-white/30 tracking-widest uppercase group-hover:text-white/50 transition-colors">Launching soon →</p>
+            <p className="text-xs text-white/30 tracking-widest uppercase group-hover:text-white/50 transition-colors">Launching soon â†’</p>
           </motion.div>
 
           <motion.div
@@ -114,8 +117,8 @@ export default function Home() {
           >
             <p className="text-xs tracking-widest uppercase text-white/30 mb-6">03</p>
             <h2 className="text-2xl font-semibold mb-4">The Hustle Blueprint</h2>
-            <p className="text-sm text-white/50 leading-relaxed mb-8">Entrepreneurship, systems, and the build. Canon 5D Mark IV, RØDECaster Pro, full studio setup. Coming soon.</p>
-            <p className="text-xs text-white/30 tracking-widest uppercase group-hover:text-white/50 transition-colors">Coming soon →</p>
+            <p className="text-sm text-white/50 leading-relaxed mb-8">Entrepreneurship, systems, and the build. Canon 5D Mark IV, RÃ˜DECaster Pro, full studio setup. Coming soon.</p>
+            <p className="text-xs text-white/30 tracking-widest uppercase group-hover:text-white/50 transition-colors">Coming soon â†’</p>
           </motion.div>
 
         </div>
@@ -124,7 +127,7 @@ export default function Home() {
       {/* Footer */}
       <footer className="px-8 py-10 border-t border-white/10">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <p className="text-xs text-white/20">© 2026 Timewalker Inc.</p>
+          <p className="text-xs text-white/20">Â© 2026 Timewalker Inc.</p>
           <p className="text-xs text-white/20">Broward County, Florida</p>
         </div>
       </footer>
@@ -132,3 +135,4 @@ export default function Home() {
     </main>
   );
 }
+
