@@ -2,7 +2,8 @@
 
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import Link from 'next/link';
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', phone: '', message: '' });
@@ -34,20 +35,7 @@ export default function Contact() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
 
-      {/* Nav */}
-      <nav className="flex justify-between items-center px-8 py-6 border-b border-white/10">
-        <Link href="/" className="text-sm tracking-widest uppercase text-white/60 hover:text-white transition">
-          Timewalker Inc.
-        </Link>
-        <div className="flex gap-6">
-          <Link href="/about" className="text-sm text-white/60 hover:text-white transition">
-            About
-          </Link>
-          <Link href="/contact" className="text-sm text-white hover:text-white transition">
-            Contact
-          </Link>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Content */}
       <section className="px-8 py-24 max-w-3xl mx-auto">
@@ -180,10 +168,7 @@ export default function Contact() {
         </motion.div>
       </section>
 
-      {/* Footer */}
-      <footer className="px-8 py-10 border-t border-white/10 mt-16">
-        <p className="text-xs text-white/20">© 2026 Timewalker Inc. — Broward County, Florida</p>
-      </footer>
+      <Footer />
 
     </main>
   );

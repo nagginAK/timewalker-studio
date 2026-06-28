@@ -2,111 +2,149 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import Nav from '@/components/Nav';
+import Footer from '@/components/Footer';
 
-export default function Home() {
+export default function About() {
   return (
     <main className="min-h-screen bg-black text-white font-sans">
-
-      {/* Nav */}
-      <nav className="flex justify-between items-center px-8 py-6 border-b border-white/10">
-        <Link href="/" className="text-sm tracking-widest uppercase text-white/60 hover:text-white transition">
-          Timewalker Inc.
-        </Link>
-        <div className="flex gap-6">
-          <Link href="/about" className="text-sm text-white/60 hover:text-white transition">
-            About
-          </Link>
-          <Link href="/contact" className="text-sm text-white/60 hover:text-white transition">
-            Contact
-          </Link>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero */}
-      <section className="px-8 py-40 max-w-5xl mx-auto border-b border-white/10">
+      <section className="px-8 py-40 max-w-3xl mx-auto border-b border-white/10">
         <motion.p
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
           className="text-xs tracking-widest uppercase text-white/30 mb-8"
         >
-          Florida · Architecture · Print · Media
+          About
         </motion.p>
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-6xl md:text-8xl font-bold leading-none tracking-tight mb-8"
+          className="text-5xl md:text-6xl font-bold leading-tight tracking-tight mb-8"
         >
-          Design.<br />Build.<br />Brand.<br />Document.
+          A holding company for things built properly.
         </motion.h1>
-        <motion.div
+        <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex items-center gap-8 mt-12"
+          transition={{ duration: 0.8, delay: 0.1 }}
+          className="text-base text-white/50 leading-relaxed"
         >
-          <Link href="/about" className="text-sm text-white/60 hover:text-white transition border-b border-white/20 pb-1">
-            About the firm →
-          </Link>
-          <Link href="/contact" className="text-sm text-white/60 hover:text-white transition border-b border-white/20 pb-1">
-            Get in touch →
+          Timewalker Inc. started as one person&apos;s answer to a simple
+          problem: too many good ideas, not enough structure to carry them.
+          Instead of picking one and shelving the rest, we built a company
+          designed to hold several — each one run on its own, each one held
+          to the same standard.
+        </motion.p>
+      </section>
+
+      {/* Story */}
+      <section className="px-8 py-24 max-w-3xl mx-auto border-b border-white/10">
+        <div className="flex items-center gap-4 mb-12">
+          <p className="text-xs tracking-widest uppercase text-white/30 shrink-0">The Story</p>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="space-y-6 text-base text-white/50 leading-relaxed"
+        >
+          <p>
+            Timewalker Inc. is based in Broward County, Florida, and was
+            founded around a straightforward idea: building one thing well
+            doesn&apos;t mean you can only build one thing. The name comes
+            from the work itself — moving between disciplines, picking up
+            skills out of order, and putting them to use as soon as they&apos;re
+            ready.
+          </p>
+          <p>
+            What started as a single person learning construction
+            management, screen printing, and media production in parallel
+            has grown into a small group of ventures, each one given the
+            room to develop at its own pace. Architecture & Construction
+            Management is working toward Florida CGC licensure. Sherel &
+            Shawnel is standing up a full apparel production studio.
+            The Hustle Blueprint is building out a media and content
+            practice around entrepreneurship.
+          </p>
+          <p>
+            None of them launched before they were ready, and none of them
+            will take on clients before the work behind the scenes is solid.
+            That&apos;s the standard the whole company runs on.
+          </p>
+        </motion.div>
+      </section>
+
+      {/* Values */}
+      <section className="px-8 py-24 max-w-3xl mx-auto border-b border-white/10">
+        <div className="flex items-center gap-4 mb-12">
+          <p className="text-xs tracking-widest uppercase text-white/30 shrink-0">What We Value</p>
+          <div className="flex-1 h-px bg-white/10" />
+        </div>
+        <div className="space-y-10">
+          {[
+            {
+              n: '01',
+              title: 'Craft over speed',
+              body: 'Every venture under Timewalker Inc. is judged on the quality of the work, not how fast it shipped.',
+            },
+            {
+              n: '02',
+              title: 'Real licensure, real standards',
+              body: 'Where a trade requires a license — construction, design-build — we get it before we take a client’s money.',
+            },
+            {
+              n: '03',
+              title: 'One name, one standard',
+              body: 'Different ventures, same accountability. The Timewalker name is attached to all of them, so all of them carry it the same way.',
+            },
+          ].map((item) => (
+            <motion.div
+              key={item.n}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="flex gap-8"
+            >
+              <p className="text-xs tracking-widest uppercase text-white/30 shrink-0 pt-1">{item.n}</p>
+              <div>
+                <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
+                <p className="text-sm text-white/50 leading-relaxed max-w-xl">{item.body}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="px-8 py-24 max-w-3xl mx-auto">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8"
+        >
+          <h2 className="text-2xl md:text-3xl font-semibold leading-tight max-w-md">
+            Want to know more about a specific venture?
+          </h2>
+          <Link
+            href="/ventures"
+            className="text-sm px-6 py-3 border border-white/40 hover:bg-white hover:text-black transition-all duration-200 shrink-0"
+          >
+            See the ventures →
           </Link>
         </motion.div>
       </section>
 
-      {/* Ventures */}
-      <section className="px-8 py-24 max-w-5xl mx-auto">
-        <p className="text-xs tracking-widest uppercase text-white/30 mb-12">Ventures</p>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/10">
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="bg-black p-8 hover:bg-white/5 transition"
-          >
-            <p className="text-xs tracking-widest uppercase text-white/30 mb-6">01</p>
-            <h2 className="text-2xl font-semibold mb-4">Architecture & CM</h2>
-            <p className="text-sm text-white/50 leading-relaxed mb-8">Residential and commercial design-build services. Florida CGC licensure in progress. First paid client target: early 2027.</p>
-            <p className="text-xs text-white/30 tracking-widest uppercase">In progress</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="bg-black p-8 hover:bg-white/5 transition"
-          >
-            <p className="text-xs tracking-widest uppercase text-white/30 mb-6">02</p>
-            <h2 className="text-2xl font-semibold mb-4">Sherel & Shawnel</h2>
-            <p className="text-sm text-white/50 leading-relaxed mb-8">Custom apparel and merchandise. South Florida print studio. Manual press, fusion dryer, full production setup.</p>
-            <p className="text-xs text-white/30 tracking-widest uppercase">Launching soon</p>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="bg-black p-8 hover:bg-white/5 transition"
-          >
-            <p className="text-xs tracking-widest uppercase text-white/30 mb-6">03</p>
-            <h2 className="text-2xl font-semibold mb-4">The Hustle Blueprint</h2>
-            <p className="text-sm text-white/50 leading-relaxed mb-8">Entrepreneurship, systems, and the build. Canon 5D Mark IV, RØDECaster Pro, full studio setup. Coming soon.</p>
-            <p className="text-xs text-white/30 tracking-widest uppercase">Coming soon</p>
-          </motion.div>
-
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="px-8 py-10 border-t border-white/10">
-        <div className="max-w-5xl mx-auto flex justify-between items-center">
-          <p className="text-xs text-white/20">© 2026 Timewalker Inc.</p>
-          <p className="text-xs text-white/20">Broward County, Florida</p>
-        </div>
-      </footer>
-
+      <Footer />
     </main>
   );
 }
